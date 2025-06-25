@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/send-email', async (req, res) => {
-    const { to1, to2, to3, to4, to5, to6, to7, to8, to9, to10 subject, text, validkey } = req.body;
+    const { to1, to2, to3, to4, to5, to6, to7, to8, to9, to10, subject, text, validkey } = req.body;
     const expectedKey = 'Alfath123@'; 
     if (validkey !== expectedKey) {
         return res.status(403).send('<h2>Key tidak valid! 🚫</h2><a href="/">Kembali</a>');
