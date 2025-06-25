@@ -16,17 +16,17 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'alfatharraby5@gmail.com',
-        pass: 'hafl ivvd ulfc smlg'
+        pass: 'wyze rkkj auyr qsie'
     }
 });
 
 app.post('/send-email', async (req, res) => {
-    const { to1, to2, to3, to4, to5, subject, text, validkey } = req.body;
+    const { to1, to2, to3, to4, to5, to6, to7, to8, to9, to10, subject, text, validkey } = req.body;
     const expectedKey = 'rahasia123'; 
     if (validkey !== expectedKey) {
         return res.status(403).send('<h2>Key tidak valid! 🚫</h2><a href="/">Kembali</a>');
     }
-    const recipients = [to1, to2, to3, to4, to5].filter(email => email && email.trim() !== '');
+    const recipients = [to1, to2, to3, to4, to5, to6, to7, to8, to9, to10].filter(email => email && email.trim() !== '');
     if (recipients.length === 0) {
         return res.status(400).send('<h2>Minimal isi 1 email ya! 💌</h2><a href="/">Balik</a>');
     }
