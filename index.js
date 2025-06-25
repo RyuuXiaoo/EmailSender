@@ -16,13 +16,13 @@ const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'alfatharraby5@gmail.com',
-        pass: 'wyze rkkj auyr qsie'
+        pass: 'hafl ivvd ulfc smlg'
     }
 });
 
 app.post('/send-email', async (req, res) => {
     const { to1, to2, to3, to4, to5, to6, to7, to8, to9, to10, subject, text, validkey } = req.body;
-    const expectedKey = 'rahasia123'; 
+    const expectedKey = '1'; 
     if (validkey !== expectedKey) {
         return res.status(403).send('<h2>Key tidak valid! 🚫</h2><a href="/">Kembali</a>');
     }
@@ -34,7 +34,7 @@ app.post('/send-email', async (req, res) => {
     let failedList = [];
     for (const email of recipients) {
         const mailOptions = {
-            from: '"Email Support" <alfatharraby5@gmail.com>',
+            from: '"Alfath Manusia Premium👾" <alfatharraby5@gmail.com>',
             to: email,
             subject,
             html: `
